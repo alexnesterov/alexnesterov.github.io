@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 export const _color = {
   primary: '#2253A2',
   secondary: '#372A56',
-  accent: '#d32027',
+  accent: '#D43C43',
   dark: '#152140',
   light: '#D9D6D8',
   black: '#111',
