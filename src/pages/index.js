@@ -1,11 +1,10 @@
 import React from 'react';
 
-import Layout from '../layouts/Home';
-import Welcome from '../components/Welcome/Welcome';
+import Layout from '../layouts/Main';
 
 const IndexPage = () => (
   <Layout>
-    <Welcome />
+    Home
   </Layout>
 );
 
