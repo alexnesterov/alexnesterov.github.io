@@ -1,12 +1,12 @@
 import { css } from 'styled-components';
 
 export const _color = {
-  primary: '#2253A2',
-  secondary: '#372A56',
-  accent: '#D43C43',
-  dark: '#152140',
-  light: '#D9D6D8',
-  black: '#111',
+  primary: '#0B0B0F',
+  secondary: '#D0CFD5',
+  accent: '#b32027',
+  dark: '#0B0B0F',
+  light: '#FFFFFF',
+  black: '#000',
   white: '#FFF'
 };
 

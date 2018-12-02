@@ -12,23 +12,26 @@
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sharp": "^2.0.7",
     "gatsby-plugin-styled-components": "^3.0.1",
+    "gatsby-plugin-typography": "^2.2.2",
     "gatsby-source-filesystem": "^2.0.4",
     "gatsby-transformer-sharp": "^2.1.4",
-    "normalize.css": "^8.0.0",
     "polished": "^2.3.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
-    "styled-components": "^4.0.2"
+    "react-typography": "^0.16.13",
+    "styled-components": "^4.0.2",
+    "typography": "^0.16.17",
+    "typography-theme-grand-view": "^0.15.10"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "deploy": "gatsby build && gh-pages -d public -b master",
+    "build": "rm -rf .cache/* && gatsby build",
+    "develop": "rm -rf .cache/* && gatsby develop",
+    "deploy": "rm -rf .cache/* && gatsby build && gh-pages -d public -b master",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -39,5 +42,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  }
+  },
+  "browserslist": [
+    "last 15 versions",
+    ">1%",
+    "ie >= 9",
+    "not dead"
+  ]
 }
