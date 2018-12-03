@@ -6,21 +6,25 @@ import { _color } from '../base/constants';
 /**
  * Styled components
  */
-const SocialBlock = styled.div``;
+const SocialBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const SocialLink = styled.a`
   display: inline-block;
-  color: ${_color.white};
-  font-size: 14px;
+  color: ${_color.dark};
+  font-size: 0.75rem;
   line-height: 1;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
-  margin-right: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   letter-spacing: 1px;
 
   &:last-child {
-    margin-right: 0;
+    margin-bottom: 0;
   }
 
   &:hover {
