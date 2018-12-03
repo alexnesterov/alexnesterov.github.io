@@ -37,7 +37,7 @@ const glitch = keyframes`
 
 const FooterBlock = styled.div`
   position: relative;
-  padding: 75px 0 75px 0;
+  padding: 80px 0;
   text-align: center;
 `;
 
@@ -48,7 +48,7 @@ const FooterCopyright = styled.div`
   text-transform: uppercase;
 
   ${_media.mobile`
-    margin-left: 40%;
+    margin-right: 40%;
   `};
 `;
 
@@ -67,10 +67,11 @@ const FooterName = styled(Link)`
 
 const FooterImage = styled.div`
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
   z-index: -1;
   max-width: 80%;
+  transform: rotateY(180deg);
 
   &:before {
     content: '';

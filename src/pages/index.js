@@ -1,24 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Layout from '../layouts/Main';
 import Info from '../components/Info';
-
-/**
- * Styled Components
- */
-const IndexPageInfo = styled.div`
-  margin-bottom: 80px;
-`;
+import Section from '../components/Section';
+import Social from '../components/Social';
 
 /**
  * IndexPage Component
  */
 const IndexPage = () => (
   <Layout>
-    <IndexPageInfo>
+    <Section>
       <Info />
-    </IndexPageInfo>
+    </Section>
+    <Section title="Контакты">
+      <Social />
+    </Section>
   </Layout>
 );
 
