@@ -19,6 +19,7 @@ const InfoWrap = styled.div`
 const InfoTitle = styled.h1`
   margin-top: 0;
   font-size: 1.125rem;
+  line-height: 1.6;
   font-weight: 500;
   text-transform: uppercase;
 `;
@@ -33,7 +34,7 @@ const Info = () => {
     <InfoBlock>
       <InfoInner>
         <InfoWrap>
-          <InfoTitle>Привет. Я Александр, веб-разработчик.</InfoTitle>
+          <InfoTitle>Привет. Я&nbsp;Александр, веб‑разработчик.</InfoTitle>
           <InfoBody>
             Cпециализируюсь на фронтенде.
             <br />
