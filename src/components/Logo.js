@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { _color } from '../base/constants';
 
+import { Link } from 'gatsby';
+
 /**
  * Styled Components
  */
-const LogoBlock = styled.a`
+const LogoBlock = styled(Link)`
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -49,7 +51,7 @@ const LogoWrap = styled.div`
  */
 const Logo = () => {
   return (
-    <LogoBlock>
+    <LogoBlock to="/">
       <LogoWrap>
         <span>Alex</span>
         Nesterov
