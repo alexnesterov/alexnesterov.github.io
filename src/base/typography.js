@@ -9,6 +9,21 @@ grandViewTheme.googleFonts = [
   },
 ];
 
+grandViewTheme.headerFontFamily = [
+  'Fira Mono',
+  'SFMono-Regular',
+  'Menlo',
+  'Monaco',
+  'Consolas',
+  'Liberation Mono',
+  'Courier New',
+  'monospace',
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji',
+];
+
 grandViewTheme.bodyFontFamily = [
   'Fira Mono',
   'SFMono-Regular',
@@ -18,12 +33,16 @@ grandViewTheme.bodyFontFamily = [
   'Liberation Mono',
   'Courier New',
   'monospace',
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji',
 ];
 
 grandViewTheme.overrideThemeStyles = ({ rhythm }, options, styles) => ({
-  'a': {
+  a: {
     color: _color.accent,
-  }
+  },
 });
 
 // console.log(grandViewTheme);
