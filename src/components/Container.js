@@ -11,11 +11,7 @@ const ContainerBlock = styled.div`
 `;
 
 const Container = ({ className, children }) => {
-  return (
-    <ContainerBlock className={className}>
-      {children}
-    </ContainerBlock>
-  );
+  return <ContainerBlock className={className}>{children}</ContainerBlock>;
 };
 
 Container.propTypes = {

@@ -1,11 +1,17 @@
 import React from 'react';
 
 import Layout from '../layouts/Main';
+import Section from '../components/Section';
+import NotFound from '../components/NotFound';
 
+/**
+ * NotFoundPage Component
+ */
 const NotFoundPage = () => (
   <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Section title="Ошибка">
+      <NotFound />
+    </Section>
   </Layout>
 );
 

@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 import Layout from './Default';
 
 const Home = ({ children }) => {
-  return (
-    <Layout>
-      {children}
-    </Layout>
-  );
+  return <Layout>{children}</Layout>;
 };
 
 Home.propTypes = {

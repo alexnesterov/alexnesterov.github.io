@@ -18,7 +18,8 @@ const HeaderInner = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 0;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
   &:before {
     content: '';

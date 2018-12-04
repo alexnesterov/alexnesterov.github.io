@@ -33,11 +33,12 @@ const Default = ({ children }) => (
           ]}
         >
           <html lang="ru" />
-          <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700" rel="stylesheet"></link>
+          <link
+            href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700"
+            rel="stylesheet"
+          />
         </Helmet>
-        <LayoutBlock>
-          {children}
-        </LayoutBlock>
+        <LayoutBlock>{children}</LayoutBlock>
       </>
     )}
   />

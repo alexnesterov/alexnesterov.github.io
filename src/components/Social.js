@@ -35,10 +35,21 @@ const SocialLink = styled.a`
 const Social = () => {
   return (
     <SocialBlock>
-      <SocialLink href='https://github.com/alexnesterov' target='_blank'>GitHub</SocialLink>
-      <SocialLink href='https://www.instagram.com/a.lexnesterov/' target='_blank'>Instagram</SocialLink>
-      <SocialLink href='https://t.me/alexnesterov' target='_blank'>Telegram</SocialLink>
-      <SocialLink href='mailto:ialexnesterov@gmail.com'>ialexnesterov@gmail.com</SocialLink>
+      <SocialLink href="https://github.com/alexnesterov" target="_blank">
+        GitHub
+      </SocialLink>
+      <SocialLink
+        href="https://www.instagram.com/a.lexnesterov/"
+        target="_blank"
+      >
+        Instagram
+      </SocialLink>
+      <SocialLink href="https://t.me/alexnesterov" target="_blank">
+        Telegram
+      </SocialLink>
+      <SocialLink href="mailto:ialexnesterov@gmail.com">
+        ialexnesterov@gmail.com
+      </SocialLink>
     </SocialBlock>
   );
 };
