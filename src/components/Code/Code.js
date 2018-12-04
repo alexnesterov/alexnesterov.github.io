@@ -20,7 +20,7 @@ const CodeImage = styled.img`
 const Code = () => {
   return (
     <CodeBlock>
-      <CodeImage src={code} alt="Code brackets"/>
+      <CodeImage src={code} alt="Code brackets" />
     </CodeBlock>
   );
 };

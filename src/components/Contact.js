@@ -10,11 +10,7 @@ const ContactBlock = styled.div``;
  * Contact Component
  */
 const Contact = () => {
-  return (
-    <ContactBlock>
-      Contact
-    </ContactBlock>
-  );
+  return <ContactBlock>Contact</ContactBlock>;
 };
 
 export default Contact;

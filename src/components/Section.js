@@ -7,9 +7,7 @@ import Container from '../components/Container';
 /**
  * Styled Components
  */
-const SectionBlock = styled.section`
-
-`;
+const SectionBlock = styled.section``;
 
 const SectionInner = styled(Container)`
   position: relative;
@@ -54,9 +52,7 @@ const Section = ({ title, children }) => {
   return (
     <SectionBlock>
       <SectionInner>
-        {title && (
-          <SectionTitle>{title}</SectionTitle>
-        )}
+        {title && <SectionTitle>{title}</SectionTitle>}
         <SectionBody>{children}</SectionBody>
       </SectionInner>
     </SectionBlock>
