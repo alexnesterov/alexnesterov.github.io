@@ -39,6 +39,9 @@ grandViewTheme.bodyFontFamily = [
   'Noto Color Emoji',
 ];
 
+grandViewTheme.headerColor = _color.dark;
+grandViewTheme.bodyColor = _color.dark;
+
 grandViewTheme.overrideThemeStyles = ({ rhythm }, options, styles) => ({
   a: {
     color: _color.accent,
