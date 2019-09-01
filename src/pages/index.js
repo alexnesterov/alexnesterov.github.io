@@ -1,6 +1,8 @@
 import React from 'react';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+
 import Info from '../components/Info';
 import Section from '../components/Section';
 import Social from '../components/Social';
@@ -10,6 +12,7 @@ import Social from '../components/Social';
  */
 const IndexPage = () => (
   <Layout>
+    <SEO />
     <Section>
       <Info />
     </Section>
