@@ -33,8 +33,8 @@
     "build": "rm -rf .cache/* && gatsby build",
     "develop": "rm -rf .cache/* && gatsby develop",
     "deploy": "rm -rf .cache/* && gatsby build && gh-pages -d public -b master",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "devDependencies": {
     "gh-pages": "^2.1.1",
