@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../layouts/Main';
+import Layout from '../components/Layout';
 import Section from '../components/Section';
 import NotFound from '../components/NotFound';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../layouts/Main';
+import Layout from '../components/Layout';
 import Info from '../components/Info';
 import Section from '../components/Section';
 import Social from '../components/Social';

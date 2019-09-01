@@ -6,11 +6,29 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import GlobalStyle from '../base/GlobalStyle';
 
+import Header from './Header';
+import Footer from './Footer';
+
 /**
  * Styled Components
  */
-const LayoutBlock = styled.div``;
+const LayoutBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
 
+const LayoutHeader = styled.header``;
+
+const LayoutContent = styled.main`
+  flex: 1 1 100%;
+`;
+
+const LayoutFooter = styled.footer``;
+
+/**
+ * Component
+ */
 const Default = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -38,7 +56,15 @@ const Default = ({ children }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <LayoutBlock>{children}</LayoutBlock>
+      <LayoutBlock>
+        <LayoutHeader>
+          <Header />
+        </LayoutHeader>
+        <LayoutContent>{children}</LayoutContent>
+        <LayoutFooter>
+          <Footer />
+        </LayoutFooter>
+      </LayoutBlock>
     </>
   );
 };
