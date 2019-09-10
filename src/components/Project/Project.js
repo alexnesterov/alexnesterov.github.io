@@ -8,6 +8,8 @@ import { _color } from '../../base/constants';
  */
 const ProjectBlock = styled.a`
   display: block;
+  max-width: 380px;
+  margin: 0 auto;
   cursor: pointer;
   color: ${_color.primary};
 `;

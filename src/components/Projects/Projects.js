@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby';
+import { _media } from '../../base/constants';
 
 import Project from '../Project';
 
@@ -15,57 +15,63 @@ const ProjectsList = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
 `;
 
 const ProjectsItem = styled.li`
   margin: 0;
   padding: 80px 15px 0 15px;
-  flex: 1 1 380px;
-  max-width: 380px;
+  flex: 1 1 50%;
+  max-width: 50%;
+
+  ${_media.mobile`
+    flex: 1 1 100%;
+    max-width: 100%;
+  `}
 `;
 
 /**
  * Projects Component
  */
-const Projects = () => {
-  const data = useStaticQuery(graphql`
-    query projectsQuery {
-      allWordpressWpProjects {
-        edges {
-          node {
-            id
-            title
-            excerpt
-            acf {
-              link
-              picture {
-                id
-                source_url
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+const myAPI = 'https://api.alexjs.dev';
 
-  return (
-    <ProjectsBlock>
-      <ProjectsList>
-        {data.allWordpressWpProjects.edges.map(({ node }) => (
-          <ProjectsItem key={node.id}>
-            <Project
-              title={node.title}
-              desc={node.excerpt}
-              picture={node.acf.picture.source_url}
-              link={node.acf.link}
-            />
-          </ProjectsItem>
-        ))}
-      </ProjectsList>
-    </ProjectsBlock>
-  );
-};
+class Projects extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // инициализируем состояние по-умолчанию
+      params: '?' + props.params || '',
+      projects: [],
+    };
+  }
+
+  componentWillMount() {
+    return fetch(myAPI + '/wp-json/wp/v2/projects' + this.state.params)
+      .then(response => response.json())
+      .then(projects => {
+        this.setState({
+          projects: projects,
+        });
+      });
+  }
+
+  render() {
+    return (
+      <ProjectsBlock>
+        <ProjectsList>
+          {this.state.projects.map(project => (
+            <ProjectsItem key={project.id}>
+              <Project
+                title={project.title.rendered}
+                desc={project.excerpt.rendered}
+                picture={project.acf.picture}
+                link={project.acf.link}
+              />
+            </ProjectsItem>
+          ))}
+        </ProjectsList>
+      </ProjectsBlock>
+    );
+  }
+}
 
 export default Projects;
