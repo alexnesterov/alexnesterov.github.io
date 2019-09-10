@@ -64,7 +64,7 @@ const ProjectBody = styled.div`
   ${ProjectBlock}:hover & {
     position: relative;
     z-index: 1;
-    box-shadow: 0 30px 50px -30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 30px 50px -30px rgba(0, 0, 0, 0.3);
     transform: translate3d(0, -20px, 0);
   }
 `;
@@ -78,10 +78,10 @@ const ProjectPicture = styled.img`
  */
 const Project = (props) => {
   return (
-    <ProjectBlock>
+    <ProjectBlock href={props.link} target="_blank">
       <ProjectHead>
-        <ProjectTitle>{props.title}</ProjectTitle>
-        <ProjectDesc>{props.desc}</ProjectDesc>
+        <ProjectTitle dangerouslySetInnerHTML={{ __html: props.title }} />
+        <ProjectDesc dangerouslySetInnerHTML={{ __html: props.desc }} />
       </ProjectHead>
       <ProjectBody>
         <ProjectPicture src={props.picture} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import Project from '../Project';
 
@@ -28,37 +29,40 @@ const ProjectsItem = styled.li`
  * Projects Component
  */
 const Projects = () => {
+  const data = useStaticQuery(graphql`
+    query projectsQuery {
+      allWordpressWpProjects {
+        edges {
+          node {
+            id
+            title
+            excerpt
+            acf {
+              link
+              picture {
+                id
+                source_url
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <ProjectsBlock>
       <ProjectsList>
-        <ProjectsItem>
-          <Project
-            title="Live Hotel"
-            desc="Вёрстка"
-            picture="https://api.alexjs.dev/wp-content/uploads/2019/09/LiveHotel-Live-in-a-hotel-localhost.jpg"
-          />
-        </ProjectsItem>
-        <ProjectsItem>
-          <Project
-            title="Live Hotel"
-            desc="Вёрстка"
-            picture="https://api.alexjs.dev/wp-content/uploads/2019/09/TrapFi-Welcome-code.alexjs.dev_.jpg"
-          />
-        </ProjectsItem>
-        <ProjectsItem>
-          <Project
-            title="Live Hotel"
-            desc="Вёрстка"
-            picture="https://api.alexjs.dev/wp-content/uploads/2019/09/LiveHotel-Live-in-a-hotel-localhost.jpg"
-          />
-        </ProjectsItem>
-        <ProjectsItem>
-          <Project
-            title="Live Hotel"
-            desc="Вёрстка"
-            picture="https://api.alexjs.dev/wp-content/uploads/2019/09/LiveHotel-Live-in-a-hotel-localhost.jpg"
-          />
-        </ProjectsItem>
+        {data.allWordpressWpProjects.edges.map(({ node }) => (
+          <ProjectsItem key={node.id}>
+            <Project
+              title={node.title}
+              desc={node.excerpt}
+              picture={node.acf.picture.source_url}
+              link={node.acf.link}
+            />
+          </ProjectsItem>
+        ))}
       </ProjectsList>
     </ProjectsBlock>
   );
