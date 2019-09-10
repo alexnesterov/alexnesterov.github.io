@@ -6,6 +6,7 @@ import SEO from '../components/seo';
 import Info from '../components/Info';
 import Section from '../components/Section';
 import Social from '../components/Social';
+import Projects from '../components/Projects';
 
 /**
  * IndexPage Component
@@ -15,6 +16,9 @@ const IndexPage = () => (
     <SEO />
     <Section>
       <Info />
+    </Section>
+    <Section title="Проекты">
+      <Projects />
     </Section>
     <Section title="Контакты">
       <Social />
