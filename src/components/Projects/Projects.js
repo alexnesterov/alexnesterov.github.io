@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { _media } from '../../base/constants';
+import axios from 'axios';
 
 import Project from '../Project';
 
@@ -29,6 +30,10 @@ const ProjectsItem = styled.li`
   `}
 `;
 
+const ProjectsLoading = styled.div`
+  text-align: center;
+`;
+
 /**
  * Projects Component
  */
@@ -41,15 +46,17 @@ class Projects extends React.Component {
       // инициализируем состояние по-умолчанию
       params: '?' + props.params || '',
       projects: [],
+      loading: true,
     };
   }
 
   componentWillMount() {
-    return fetch(myAPI + '/wp-json/wp/v2/projects' + this.state.params)
-      .then(response => response.json())
-      .then(projects => {
+    return axios
+      .get(myAPI + '/wp-json/wp/v2/projects' + this.state.params)
+      .then(response => {
         this.setState({
-          projects: projects,
+          projects: response.data,
+          loading: false,
         });
       });
   }
@@ -57,18 +64,22 @@ class Projects extends React.Component {
   render() {
     return (
       <ProjectsBlock>
-        <ProjectsList>
-          {this.state.projects.map(project => (
-            <ProjectsItem key={project.id}>
-              <Project
-                title={project.title.rendered}
-                desc={project.excerpt.rendered}
-                picture={project.acf.picture}
-                link={project.acf.link}
-              />
-            </ProjectsItem>
-          ))}
-        </ProjectsList>
+        {this.state.loading ? (
+          <ProjectsLoading>Загрузка...</ProjectsLoading>
+        ) : (
+          <ProjectsList>
+            {this.state.projects.map(project => (
+              <ProjectsItem key={project.id}>
+                <Project
+                  title={project.title.rendered}
+                  desc={project.excerpt.rendered}
+                  picture={project.acf.picture}
+                  link={project.acf.link}
+                />
+              </ProjectsItem>
+            ))}
+          </ProjectsList>
+        )}
       </ProjectsBlock>
     );
   }
