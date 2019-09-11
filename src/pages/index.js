@@ -18,7 +18,7 @@ const IndexPage = () => (
       <Info />
     </Section>
     <Section title="Проекты">
-      <Projects params="per_page=4" />
+      <Projects params="per_page=4" viewAll={true} />
     </Section>
     <Section title="Контакты">
       <Social />
