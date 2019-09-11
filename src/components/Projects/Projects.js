@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { _media } from '../../base/constants';
+import { _media, _color } from '../../base/constants';
 import axios from 'axios';
+import { Link } from 'gatsby';
 
 import Project from '../Project';
 
@@ -11,7 +12,7 @@ import Project from '../Project';
 const ProjectsBlock = styled.div``;
 
 const ProjectsList = styled.ul`
-  margin: -80px 0;
+  margin: -80px 0 0;
   padding: 0;
   list-style: none;
   display: flex;
@@ -32,6 +33,55 @@ const ProjectsItem = styled.li`
 
 const ProjectsLoading = styled.div`
   text-align: center;
+`;
+
+const ProjectsViewAll = styled.div`
+  margin-top: 80px;
+  text-align: center;
+
+  a {
+    position: relative;
+    display: inline-block;
+    padding: 2px;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: ${_color.accent};
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      color: ${_color.primary};
+
+      &:before,
+      &:after {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 10px;
+      height: 1px;
+      background-color: ${_color.accent};
+      opacity: 0;
+      transition: 0.2s ease-in-out;
+    }
+
+    &:before {
+      right: 100%;
+      margin-right: 5px;
+      transform: translate3d(-10px, 0, 0);
+    }
+
+    &:after {
+      left: 100%;
+      margin-left: 5px;
+      transform: translate3d(10px, 0, 0);
+    }
+  }
 `;
 
 /**
@@ -67,18 +117,27 @@ class Projects extends React.Component {
         {this.state.loading ? (
           <ProjectsLoading>Загрузка...</ProjectsLoading>
         ) : (
-          <ProjectsList>
-            {this.state.projects.map(project => (
-              <ProjectsItem key={project.id}>
-                <Project
-                  title={project.title.rendered}
-                  desc={project.excerpt.rendered}
-                  picture={project.acf.picture}
-                  link={project.acf.link}
-                />
-              </ProjectsItem>
-            ))}
-          </ProjectsList>
+          <>
+            <ProjectsList>
+              {this.state.projects.map(project => (
+                <ProjectsItem key={project.id}>
+                  <Project
+                    title={project.title.rendered}
+                    desc={project.excerpt.rendered}
+                    picture={project.acf.picture}
+                    link={project.acf.link}
+                  />
+                </ProjectsItem>
+              ))}
+            </ProjectsList>
+            {this.props.viewAll && (
+              <ProjectsViewAll to="/projects">
+                <Link to="/projects">
+                  <span>Все проекты</span>
+                </Link>
+              </ProjectsViewAll>
+            )}
+          </>
         )}
       </ProjectsBlock>
     );
