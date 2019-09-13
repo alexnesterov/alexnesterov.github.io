@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'ALEX NESTEROV',
-    description: `Personal website`,
+    description: `Frontend-разработчик, персональный сайт`,
     author: `Alex Nesterov`,
   },
   plugins: [

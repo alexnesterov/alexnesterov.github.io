@@ -41,6 +41,10 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          name: `keywords`,
+          content: `Вёрстка, Frontend, персональный сайт, портфолио`
+        },
+        {
           property: `og:title`,
           content: title,
         },
