@@ -48,7 +48,7 @@ const FooterCopyright = styled.div`
   text-transform: uppercase;
 
   ${_media.mobile`
-    margin-right: 40%;
+    margin-right: 39%;
   `};
 `;
 
@@ -109,16 +109,21 @@ const FooterImage = styled.div`
  * Footer Component
  */
 const Footer = () => {
+  let date = new Date(),
+      dateYear = date.getFullYear();
+
   return (
     <FooterBlock>
       <FooterInner>
         <FooterCopyright>
-          &copy;{' '}
+          &copy;&nbsp;
           <FooterName to="/">
             <span>Alex</span>
             Nesterov
           </FooterName>
-          , 2018
+          ,&nbsp;{dateYear}.
+          Посмотреть
+          <a href="https://github.com/alexnesterov/alexnesterov.github.io" target="_blank"> исходный&nbsp;код</a>.
         </FooterCopyright>
       </FooterInner>
       <FooterImage>
