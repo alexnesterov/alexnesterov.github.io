@@ -123,7 +123,7 @@ const Footer = () => {
           </FooterName>
           ,&nbsp;{dateYear}.
           Посмотреть
-          <a href="https://github.com/alexnesterov/alexnesterov.github.io" target="_blank"> исходный&nbsp;код</a>.
+          <a href="https://github.com/alexnesterov/alexnesterov.github.io" target="_blank" rel="noopener noreferrer"> исходный&nbsp;код</a>.
         </FooterCopyright>
       </FooterInner>
       <FooterImage>
