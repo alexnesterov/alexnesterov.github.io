@@ -39,7 +39,7 @@ const Social = () => {
         GitHub
       </SocialLink>
       <SocialLink
-        href="https://www.instagram.com/a.lexnesterov/"
+        href="https://www.instagram.com/_alexnesterov/"
         target="_blank"
       >
         Instagram
